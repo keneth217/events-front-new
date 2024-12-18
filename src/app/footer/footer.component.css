@@ -1,0 +1,13 @@
+.back {
+  background-image: url("/assets/3.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  position: relative;
+}
+.mask{
+  background-color: rgba(157, 232, 185, 0.5);
+
+}
+
+
