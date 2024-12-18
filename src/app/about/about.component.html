@@ -1,0 +1,58 @@
+<div class="min-h-screen relative">
+  <!-- Centered Content -->
+  <div class="relative flex flex-col justify-center items-center h-full">
+    <!-- Container with background image and blur effect -->
+    <div class="mask back w-full h-full absolute inset-0 bg-cover bg-center">
+      <!-- Blur and Color Overlay -->
+      <div class="absolute inset-0 bg-green-500 bg-opacity-30 backdrop-blur-sm"></div>
+
+
+      <div class="text-center justify-center mx-auto p-32 ">
+        <!-- Content on top of the blurred background -->
+        <h1 class="text-center text-white text-4xl font-bold relative z-20">About us</h1>
+        <div class="py-4 text-center text-white text-lg relative z-20">
+          Our job is to ensure that your brand is effectively
+          EVENTED
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Popular Events Section -->
+  <div class="relative py-12">
+    <h1 class="text-center text-white text-4xl font-bold mb-6">About Our Success</h1>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
+      <!-- Loop through events -->
+      <div *ngFor="let event of events" class=" rounded-sm shadow-sm overflow-hidden">
+        <div class="relative">
+
+        </div>
+        <div class="p-4">
+          <h2 class=" text-black font-semibold text-4xl font-bold  mb-2">{{ event.title }}</h2>
+          <p class="text-white text-2xl mb-4">{{ event.description }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative py-12">
+    <h1 class="text-center text-white text-4xl font-bold mb-6">About Our Success</h1>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
+      <!-- Loop through events -->
+      <div *ngFor="let about of abouts" class=" rounded-sm shadow-sm overflow-hidden">
+        <div class="relative">
+
+        </div>
+        <div class="p-4">
+          <h2 class=" text-black font-semibold text-4xl font-bold  mb-2">{{ about.title }}</h2>
+          <p class="text-white text-2xl mb-4">{{ about.description }}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
