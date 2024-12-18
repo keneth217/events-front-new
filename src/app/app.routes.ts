@@ -3,12 +3,19 @@ import {HomeComponent} from "./home/home.component";
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {EventsListComponent} from "./events-list/events-list.component";
+import {AboutComponent} from "./about/about.component";
+import {EventDetailsComponentComponent} from "./event-details-component/event-details-component.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 export const routes: Routes = [
 
   { path: '', component: HomeComponent },
-
+  { path: 'about', component: AboutComponent },
   { path: 'events', component: EventsListComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  { path: 'event-details/:title', component:EventDetailsComponentComponent},
+
+
+  { path: 'dash', component: DashboardComponent },
 ];
