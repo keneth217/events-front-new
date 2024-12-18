@@ -1,22 +1,42 @@
-<header class="bg-green-500 h-20 w-full">
+<header class="bg-green-500 h-20 w-full fixed top-0 left-0 z-50">
   <div class="container mx-auto flex items-center justify-between h-full px-4">
     <!-- Logo Section -->
     <div class="text-white text-xl font-bold">Logo</div>
 
     <!-- Navigation Section -->
     <ul class="flex space-x-6 text-white">
-      <li
-        *ngFor="let link of links"
-        class="hover:text-gray-300 cursor-pointer underline-offset-2"
-      >
+      <li *ngFor="let link of links" class="hover:text-gray-300 cursor-pointer underline-offset-2">
         <a [routerLink]="link.path">{{ link.label }}</a>
       </li>
     </ul>
   </div>
 </header>
 
-<main class="bg-slate-700 min-h-screen">
-  <div class="container mx-auto py-8">
+<main class="bg-slate-900 min-h-screen text-slate-900 dark:text-slate-400 dark:bg-slate-800 pt-20 pb-20">
+  <div class="container mx-auto py-8 flex-grow relative">
+    <!-- Scroll to Top Button -->
+    <button
+      class="fixed bottom-10 left-5 bg-green-500 text-white p-3 rounded-full shadow-lg transform transition-transform hover:scale-"
+      (click)="scrollToTop()"
+    >
+      <span>Top</span>
+    </button>
+
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/254711766223"
+      target="_blank"
+      class="fixed bottom-10 right-10 bg-green-500 p-3 rounded-full shadow-lg transform transition-transform hover:scale-110 z-50"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+        class="w-12 h-12"
+      />
+    </a>
+
+
 
     <!-- Routed Components Render Here -->
     <router-outlet></router-outlet>
