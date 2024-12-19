@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
-
+// @ts-ignore
+import * as AOS  from 'aos';
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -11,6 +12,11 @@ import {NgForOf} from "@angular/common";
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 1200, // You can adjust the duration
+    });
+  }
 // Array of event objects
   events = [
     {
