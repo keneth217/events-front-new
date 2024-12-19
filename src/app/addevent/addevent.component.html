@@ -1,1 +1,84 @@
-<p>addevent works!</p>
+<div class="fixed inset-0 flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl w-full outline-none border-green-400 border-2">
+
+
+    <div class="flex justify-center mb-2">
+      <h2 class="text-xl font-bold text-green-500">Create New Event</h2>
+    </div>
+
+    <hr class="border-0 border-t border-green-400 mb-4">
+
+    <form [formGroup]="eventForm" (ngSubmit)="submitEvent()">
+      <!-- Event Name -->
+      <label for="eventName" class="block text-gray-700 font-bold mb-2">Event Name</label>
+      <input id="eventName" type="text" formControlName="eventName" placeholder="Enter event name"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Location -->
+      <label for="location" class="block text-gray-700 font-bold mb-2">Location</label>
+      <input id="location" type="text" formControlName="location" placeholder="Enter location"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Description -->
+      <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
+      <textarea id="description" formControlName="description" placeholder="Enter description"
+                class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md"></textarea>
+
+      <!-- Category -->
+      <label for="categoryId" class="block text-gray-700 font-bold mb-2">Category</label>
+      <select id="categoryId" formControlName="categoryId"
+              class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+        <option value="" disabled selected>Select category</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+
+      <!-- Event Dates -->
+      <label class="block text-gray-700 font-bold mb-2">Start Date</label>
+      <input type="date" formControlName="startDate"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+      <label class="block text-gray-700 font-bold mb-2">End Date</label>
+      <input type="date" formControlName="endDate"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Event Times -->
+      <label class="block text-gray-700 font-bold mb-2">Start Time</label>
+      <input type="time" formControlName="startTime"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+      <label class="block text-gray-700 font-bold mb-2">End Time</label>
+      <input type="time" formControlName="endTime"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Event Cost -->
+      <label for="eventCost" class="block text-gray-700 font-bold mb-2">Event Cost</label>
+      <input id="eventCost" type="number" formControlName="eventCost" placeholder="Enter cost"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Creator Name -->
+      <label for="creatorName" class="block text-gray-700 font-bold mb-2">Creator Name</label>
+      <input id="creatorName" type="text" formControlName="creatorName" placeholder="Enter creator name"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Sold Out -->
+      <label for="soldOut" class="block text-gray-700 font-bold mb-2">Sold Out</label>
+      <input id="soldOut" type="number" formControlName="soldOut" placeholder="Enter sold-out tickets"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Event Image -->
+      <label class="block text-gray-700 font-bold mb-2">Event Image</label>
+      <input type="file" (change)="onImageSelect($event)" formControlName="eventImage"
+             class="border p-2 w-full mb-4 focus:outline-none focus:border-green-500 focus:border-2 rounded-md">
+
+      <!-- Submit and Close Buttons -->
+      <div class="flex justify-between">
+        <button type="submit" [disabled]="eventForm.invalid"
+                class="bg-green-400 cursor-pointer text-white p-2 rounded-md font-bold hover:bg-green-500">
+          Submit
+        </button>
+        <button type="button" (click)="closeEventForm()"
+                class="bg-red-400 text-white p-2 rounded-md font-bold hover:bg-red-500">
+          Close
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
