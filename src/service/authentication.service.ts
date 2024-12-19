@@ -13,7 +13,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   login(credentials: { shopCode:string,userName: string; password: string }): Observable<any> {
-    return this.http.post<any>(`${this.BASE_URL}/v1/auth/login`, credentials).pipe(
+    return this.http.post<any>(`${this.BASE_URL}/auth/login`, credentials).pipe(
       tap((response) => {
         // Store token and user info in localStorage
         localStorage.setItem('token', response.token);
