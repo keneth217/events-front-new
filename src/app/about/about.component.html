@@ -1,56 +1,49 @@
-<div class="min-h-screen relative">
+<div class="min-h-screen relative bg-gray-900 text-white">
   <!-- Centered Content -->
   <div class="relative flex flex-col justify-center items-center h-full">
     <!-- Container with background image and blur effect -->
-    <div class="mask back w-full h-full absolute inset-0 bg-cover bg-center">
+    <div class="mask back w-full h-full absolute inset-0 bg-cover bg-center" style="background-image: url('assets/3.jpg');">
       <!-- Blur and Color Overlay -->
-      <div class="absolute inset-0 bg-green-500 bg-opacity-30 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm"></div>
 
-
-      <div class="text-center justify-center mx-auto p-32 ">
+      <div class="text-center mx-auto p-32" data-aos="fade-down" data-aos-duration="1000">
         <!-- Content on top of the blurred background -->
-        <h1 class="text-center text-white text-4xl font-bold relative z-20">About us</h1>
-        <div class="py-4 text-center text-white text-lg relative z-20">
-          Our job is to ensure that your brand is effectively
-          EVENTED
-        </div>
+        <h1 class="text-4xl font-bold mb-4">About Us</h1>
+        <p class="text-white text-2xl uppercase mt-4 pt-4"  data-aos="zoom-in-up" data-aos-duration="2000">
+          Our job is to ensure that your brand
+          <br>
+
+          is effectively
+
+          <span class="font-semibold text-green-400">EVENTED</span>.
+        </p>
       </div>
     </div>
   </div>
-
-
-
 
   <!-- Popular Events Section -->
-  <div class="relative py-12">
-    <h1 class="text-center text-white text-4xl font-bold mb-6">About Our Success</h1>
+  <div class="relative py-12 bg-gray-800">
+    <h1 class="text-center text-4xl font-bold mb-6" data-aos="fade-up">About Our Success</h1>
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4">
       <!-- Loop through events -->
-      <div *ngFor="let event of events" class=" rounded-sm shadow-sm overflow-hidden">
-        <div class="relative">
-
-        </div>
+      <div *ngFor="let event of events" class="rounded-lg shadow-md bg-gray-700" data-aos="fade-right">
         <div class="p-4">
-          <h2 class=" text-black font-semibold text-4xl font-bold  mb-2">{{ event.title }}</h2>
-          <p class="text-white text-2xl mb-4">{{ event.description }}</p>
-
+          <h2 class="text-2xl font-bold mb-2">{{ event.title }}</h2>
+          <p class="text-lg">{{ event.description }}</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="relative py-12">
-    <h1 class="text-center text-white text-4xl font-bold mb-6">About Our Success</h1>
+  <!-- About Us Section -->
+  <div class="relative py-12 bg-gray-900">
+    <h1 class="text-center text-4xl font-bold mb-6" data-aos="fade-up">About Us</h1>
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
-      <!-- Loop through events -->
-      <div *ngFor="let about of abouts" class=" rounded-sm shadow-sm overflow-hidden">
-        <div class="relative">
-
-        </div>
+      <!-- Loop through about items -->
+      <div *ngFor="let about of abouts" class="rounded-lg shadow-md bg-gray-800" data-aos="zoom-in">
         <div class="p-4">
-          <h2 class=" text-black font-semibold text-4xl font-bold  mb-2">{{ about.title }}</h2>
-          <p class="text-white text-2xl mb-4">{{ about.description }}</p>
-
+          <h2 class="text-2xl font-bold mb-2">{{ about.title }}</h2>
+          <p class="text-lg">{{ about.description }}</p>
         </div>
       </div>
     </div>
