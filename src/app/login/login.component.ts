@@ -65,7 +65,8 @@ export class LoginComponent {
 
           // Store token and user details using TokenService
           this.tokenService.saveToken=response.token; // Save token
-          this.tokenService.saveUser=response.user;   // Save user details
+          this.tokenService.saveUser=response.user;
+            // Save user details
           this.tokenService.saveShop=response.shop;    // Save shop details
 
           // Determine success message based on response
@@ -80,12 +81,10 @@ export class LoginComponent {
               case 'ADMIN':
                 this.router.navigateByUrl('/dash');
                 break;
-              case 'CASHIER':
+              case 'ATTENDEE':
                 this.router.navigateByUrl('/dash');
                 break;
-              case 'SUPER_USER':
-                this.router.navigateByUrl('/super');
-                break;
+
               default:
                 this.router.navigateByUrl('/');
             }
