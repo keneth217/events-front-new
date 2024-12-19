@@ -2,32 +2,32 @@
   <!-- Centered Content -->
   <div class="relative flex flex-col justify-center items-center h-full">
     <!-- Container with background image and blur effect -->
-    <div class="mask back w-full h-full absolute inset-0 bg-cover bg-center">
+    <div class="mask back w-full h-full absolute inset-0 bg-cover bg-center" style="background-image: url('assets/2.jpg');">
       <!-- Blur and Color Overlay -->
-      <div class="absolute inset-0 bg-green-500 bg-opacity-30 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-gray-800 bg-opacity-20 backdrop-blur-sm"></div>
 
-
-      <div class="text-center justify-center mx-auto p-32 ">
+      <div class="text-center justify-center mx-auto p-32" data-aos="fade-down" data-aos-duration="1000">
         <!-- Content on top of the blurred background -->
-        <h1 class="text-center text-white text-4xl font-bold relative z-20">Welcome to Home</h1>
-        <div class="py-4 text-center text-white text-lg relative z-20">
+        <h1 class="text-white text-4xl font-bold">Welcome to Ticket Yetu</h1>
+        <div class="py-4 text-white text-lg">
           Explore our Events, Login, or Signup using the navigation bar!
         </div>
       </div>
     </div>
   </div>
 
-
-
-
   <!-- Popular Events Section -->
   <div class="relative py-12">
-    <h1 class="text-center text-white text-4xl font-bold mb-6">Popular Events</h1>
+    <h1 class="text-center text-white text-4xl font-bold mb-6" data-aos="fade-up" data-aos-duration="1000">Popular Events</h1>
     <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 px-4">
       <!-- Loop through events -->
-      <div *ngFor="let event of events" class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div
+        *ngFor="let event of events; let i = index"
+        class="bg-white rounded-lg shadow-md overflow-hidden"
+        data-aos="fade-up"
+        data-aos-duration="800">
         <div class="relative">
-          <img [src]="event.image" alt="{{ event.title }}" class="w-full h-48 object-cover " />
+          <img [src]="event.image" alt="{{ event.title }}" class="w-full h-48 object-cover" />
           <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div> <!-- Optional: To enhance visibility of text -->
         </div>
         <div class="p-4">
