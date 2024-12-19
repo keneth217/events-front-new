@@ -52,7 +52,7 @@ export class DashboardComponent {
   // Define the links for different roles
   private getUserLinks(): Link[] {
     switch (this.userRole) {
-      case 'USER':
+      case 'ATTENDEE':
         return this.UserLinks;
       case 'ADMIN':
         return this.adminLinks;
@@ -64,9 +64,8 @@ export class DashboardComponent {
   //  User
   UserLinks: Link[] = [
     { label: 'Analytics', icon: 'heroSquares2x2', route: '/admin' },
-    { label: 'Shops', icon: 'heroUsers', route: '/admin/shops' },
-    { label: 'Email', icon: 'heroUsers', route: '/admin/mail' },
-    { label: 'bulk Email', icon: 'heroUsers', route: '/admin/bulk' },
+    { label: 'events', icon: 'heroPlusCircle', route: '/dash/events' },
+    { label: 'my-tickets', icon: 'heroPlusCircle', route: '/dash/my-tickets' },
     {
       label: 'Reports',
       icon: 'heroDocument',
@@ -84,9 +83,9 @@ export class DashboardComponent {
   adminLinks: Link[] = [
     { label: 'Analytics', icon: 'heroPlusCircle', route: '/dash' },
     { label: 'events', icon: 'heroPlusCircle', route: '/dash/events' },
-    { label: 'Supplier', icon: 'heroPercentBadge', route: '/dash/supplier' },
-    { label: 'Employee', icon: 'heroPercentBadge', route: '/dash/employee' },
-    { label: 'Sales', icon: 'heroPercentBadge', route: '/dash/sale' },
+    { label: 'Add event', icon: 'heroPercentBadge', route: '/dash/add' },
+    { label: 'category', icon: 'heroPercentBadge', route: '/dash/category' },
+    { label: 'attendess', icon: 'heroPercentBadge', route: '/dash/sale' },
     { label: 'Expense', icon: 'heroPercentBadge', route: '/dash/expense' },
     {
       label: 'Reports',
